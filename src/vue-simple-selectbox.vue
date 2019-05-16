@@ -19,7 +19,6 @@
 </template>
 <script>
   export default {
-    name: "vue-simple-selectbox",
     data: function () {
       return {
         currentValue: this.selected,
