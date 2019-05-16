@@ -1,5 +1,5 @@
 <template>
-    <span class="select-container" :class="{ 'select-active': selectStatus }" v-clickOutside="closeMenu">
+    <div class="select-container" :class="{ 'select-active': selectStatus }" v-clickOutside="closeMenu">
         <select v-model="currentValue">
             <option v-for="option in options" :value="option.value" :key="option.value">{{option.text}}</option>
         </select>
@@ -15,7 +15,7 @@
                     :key="option.value">{{option.text}}</li>
             </ul>
         </div>
-    </span>
+    </div>
 </template>
 <script>
   export default {
@@ -130,6 +130,7 @@
         -khtml-user-select: none;
         -ms-user-select: none;
         position: relative;
+        display: inline;
     }
 
     .select-container select {
@@ -145,17 +146,6 @@
         border-radius: 3px;
         font-size: 16px;
         color: #222222;
-    }
-
-    @media screen and (max-width: 991px) {
-        .select-box--single {
-            cursor: pointer;
-            padding: 10px 5px;
-            font-size: 12px;
-            min-width: inherit !important;
-            text-align: center;
-            width: 100%;
-        }
     }
 
     .select-active .select-box--single,
@@ -225,7 +215,7 @@
         right: 0;
         float: right;
         position: relative;
-        top: 6px;
+        top: 1px;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         vertical-align: top;
@@ -237,61 +227,6 @@
     .select-active .select-box--chevron {
         -webkit-transform: rotate(315deg);
         transform: rotate(315deg);
-        top: 10px;
-    }
-
-    @media screen and (max-width: 991px) {
-        .select-box--chevron {
-            display: inline-block;
-            height: 8px;
-            top: 4px;
-            width: 8px;
-            right: 2px;
-            margin-left: 6px;
-        }
-        .select-active .select-box--chevron {
-            -webkit-transform: rotate(315deg);
-            transform: rotate(315deg);
-            top: 8px;
-        }
-        .select-box--dropdown li {
-            display: block;
-            cursor: pointer;
-            padding: 10px 5px;
-            color: #222222;
-        }
-        .select-box--dropdown {
-            visibility: hidden;
-            opacity: 0;
-            list-style-type: none;
-            position: absolute;
-            padding: 0;
-            border: 1px solid #d8d8d8;
-            border-radius: 3px;
-            font-size: 12px;
-            z-index: 10;
-            background: #fff;
-            width: 100%;
-            left: 0;
-            text-align: left;
-            -webkit-box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
-            -moz-box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
-            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
-        }
-        .select-box--active::after {
-            border-style: solid;
-            border-width: 1px 1px 0 0;
-            content: '';
-            display: inline-block;
-            height: 5px;
-            left: 0;
-            position: relative;
-            top: 7px;
-            -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-            vertical-align: top;
-            width: 8px;
-            margin-left: 6px;
-        }
+        top: 6px;
     }
 </style>
