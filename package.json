@@ -1,13 +1,13 @@
 {
-  "name": "vue-simple-dropdown",
+  "name": "vue-simple-selectbox",
   "version": "1.0.0",
   "description": "",
 
-  "main": "dist/vue-simple-dropdown.umd.js",
-  "module": "dist/vue-simple-dropdown.esm.js",
-  "unpkg": "dist/vue-simple-dropdown.min.js",
+  "main": "dist/vue-simple-selectbox.umd.js",
+  "module": "dist/vue-simple-selectbox.esm.js",
+  "unpkg": "dist/vue-simple-selectbox.min.js",
   "browser": {
-    "./sfc": "src/vue-simple-dropdown.vue"
+    "./sfc": "src/vue-simple-selectbox.vue"
   },
 
   "files": [

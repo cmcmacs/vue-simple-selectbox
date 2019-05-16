@@ -43,7 +43,7 @@ if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
     output: {
-      file: 'dist/vue-simple-dropdown.esm.js',
+      file: 'dist/vue-simple-selectbox.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -65,7 +65,7 @@ if (!argv.format || argv.format === 'umd') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-simple-dropdown.umd.js',
+      file: 'dist/vue-simple-selectbox.umd.js',
       format: 'umd',
       name: 'VueSimpleDropdown',
       exports: 'named',
@@ -89,7 +89,7 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-simple-dropdown.min.js',
+      file: 'dist/vue-simple-selectbox.min.js',
       format: 'iife',
       name: 'VueSimpleDropdown',
       exports: 'named',

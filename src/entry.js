@@ -1,5 +1,5 @@
 // Import vue component
-import component from './vue-simple-dropdown.vue';
+import component from './vue-simple-selectbox.vue';
 
 // install function executed by Vue.use()
 function install(Vue) {
