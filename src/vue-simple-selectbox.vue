@@ -12,7 +12,7 @@
             <ul class="select-box--dropdown" v-if="options">
                 <li v-for="option in options" class="select-box--element" v-on:click="updateOption(option.value)"
                     :class="[option.value == currentValue ? 'select-box--active' : '' ]" :value="option.value"
-                    :key="option.value">{{option.text}}</li>
+                    :key="option.value">{{ option.text }}</li>
             </ul>
         </div>
     </div>
@@ -146,7 +146,9 @@
 
     .select-box--single {
         cursor: pointer;
-        display: inline-block;
+        display: inline-flex;
+        /* align-content: center; */
+        align-items: center;
         padding: 10px;
         border: 1px solid #d8d8d8;
         border-radius: 3px;
@@ -221,20 +223,19 @@
         display: inline-block;
         height: 10px;
         right: 0;
-        float: right;
         position: relative;
-        top: 4px;
+        top: -3px;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         vertical-align: top;
         width: 10px;
-        margin-left: 10px;
+        margin-left: auto;
         border-color: #999999;
     }
 
     .select-active .select-box--chevron {
         -webkit-transform: rotate(315deg);
         transform: rotate(315deg);
-        top: 10px;
+        top: 4px;
     }
 </style>

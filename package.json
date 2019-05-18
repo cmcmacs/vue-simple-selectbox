@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-selectbox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple wrapper for select box to ease styling of the element",
 
   "main": "dist/vue-simple-selectbox.umd.js",
@@ -33,5 +33,13 @@
     "rollup-plugin-vue": "^4.7.2",
     "vue": "^2.6.8",
     "vue-template-compiler": "^2.6.8"
-  }
+  },
+
+  "bugs": "https://github.com/MannyMannyManny/vue-simple-selectbox/issues",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "select styling",
+    "dropdown"
+  ]
 }
