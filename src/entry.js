@@ -5,7 +5,7 @@ import component from './vue-simple-selectbox.vue';
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('VueSimpleDropdown', component);
+  Vue.component('VueSimpleSelectbox', component);
 }
 
 // Create module definition for Vue.use()
