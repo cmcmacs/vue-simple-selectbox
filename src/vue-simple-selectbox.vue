@@ -9,7 +9,7 @@
                 <span class="select-box--value">{{ currentValue != null ? currentText : placeholder }}</span>
                 <span class="select-box--chevron"></span>
             </span>
-            <ul class="select-box--dropdown">
+            <ul class="select-box--dropdown" v-if="options">
                 <li v-for="option in options" class="select-box--element" v-on:click="updateOption(option.value)"
                     :class="[option.value == currentValue ? 'select-box--active' : '' ]" :value="option.value"
                     :key="option.value">{{option.text}}</li>
@@ -28,12 +28,12 @@
     computed: {
       currentText: function () {
         let text = this.options.find(obj => {
-          return obj.value == this.currentValue
+          return obj.value == this.currentValue;
         })
         if (text != null) {
-          return text.text
+          return text.text;
         } else {
-          return false
+          return false;
         }
       }
     },
@@ -56,20 +56,20 @@
         type: Array,
         required: true,
         validator: (value) => {
-          let error = false
+          let error = false;
           if (value.length > 0) {
             value.forEach((v, i, a) => {
               if (v.text == null || v.value == null) {
-                error = true
+                error = true;
               }
             });
             if (error) {
-              return false
+              return false;
             }
           } else {
-            return false
+            return false;
           }
-          return true
+          return true;
         }
       }
     },
@@ -80,54 +80,61 @@
         bind: function (el, binding, vNode) {
           // Provided expression must evaluate to a function.
           if (typeof binding.value !== 'function') {
-            const compName = vNode.context.name
-            let warn = `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be`
+            const compName = vNode.context.name;
+            let warn = `[Vue-click-outside:] provided expression '${binding.expression}' is not a function, but has to be`;
             if (compName) {
-              warn += `Found in component '${compName}'`
+              warn += `Found in component '${compName}'`;
             }
-            console.warn(warn)
+            console.warn(warn);
           }
           // Define Handler and cache it on the element
-          const bubble = binding.modifiers.bubble
+          const bubble = binding.modifiers.bubble;
           const handler = (e) => {
             if (bubble || (!el.contains(e.target) && el !== e.target)) {
-              binding.value(e)
+              binding.value(e);
             }
-          }
-          el.__vueClickOutside__ = handler
+          };
+          el.__vueClickOutside__ = handler;
 
           // add Event Listeners
-          document.addEventListener('click', handler)
+          document.addEventListener('click', handler);
         },
 
         unbind: function (el, binding) {
           // Remove Event Listeners
-          document.removeEventListener('click', el.__vueClickOutside__)
-          el.__vueClickOutside__ = null
+          document.removeEventListener('click', el.__vueClickOutside__);
+          el.__vueClickOutside__ = null;
 
         }
       }
     },
     methods: {
       updateOption(option) {
-        this.selectStatus = false
-        this.currentValue = option
-        this.$emit('selectOption', this.currentValue)
+        this.selectStatus = false;
+        this.currentValue = option;
+        this.$emit('selectOption', this.currentValue);
       },
       closeMenu() {
-        this.selectStatus = false
+        this.selectStatus = false;
       }
     }
   }
 </script>
 
 <style>
+    .select-box {
+        display: inline;
+    }
+
     .select-container {
         /* Prevent text from highlighting on click */
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -ms-user-select: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
         position: relative;
         display: inline;
     }
@@ -145,6 +152,7 @@
         border-radius: 3px;
         font-size: 16px;
         color: #222222;
+        position: relative;
     }
 
     .select-active .select-box--single,
@@ -159,6 +167,7 @@
         list-style-type: none;
         position: absolute;
         padding: 0;
+        margin: 0;
         border: 1px solid #d8d8d8;
         border-radius: 3px;
         font-size: 16px;
@@ -186,7 +195,7 @@
 
     .select-box--active,
     .select-box--dropdown li:hover {
-        background: #EFF0FC;
+        background: rgba(115, 115, 115, 0.1);
     }
 
     .select-box--active::after {
@@ -197,7 +206,7 @@
         height: 5px;
         left: 0;
         position: relative;
-        top: 10px;
+        top: 7px;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         vertical-align: top;
@@ -214,7 +223,7 @@
         right: 0;
         float: right;
         position: relative;
-        top: 1px;
+        top: 4px;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         vertical-align: top;
@@ -226,6 +235,6 @@
     .select-active .select-box--chevron {
         -webkit-transform: rotate(315deg);
         transform: rotate(315deg);
-        top: 6px;
+        top: 10px;
     }
 </style>

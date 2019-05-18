@@ -1,7 +1,7 @@
 {
   "name": "vue-simple-selectbox",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Simple wrapper for select box to ease styling of the element",
 
   "main": "dist/vue-simple-selectbox.umd.js",
   "module": "dist/vue-simple-selectbox.esm.js",
@@ -20,9 +20,6 @@
     "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
-  },
-
-  "dependencies": {
   },
 
   "devDependencies": {
