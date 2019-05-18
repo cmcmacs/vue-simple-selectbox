@@ -223,14 +223,13 @@
         display: inline-block;
         height: 10px;
         right: 0;
-        float: right;
         position: relative;
         top: -3px;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         vertical-align: top;
         width: 10px;
-        margin-left: 10px;
+        margin-left: auto;
         border-color: #999999;
     }
 
