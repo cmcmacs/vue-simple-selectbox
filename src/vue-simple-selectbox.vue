@@ -9,7 +9,7 @@
                 <span class="select-box--value">{{ currentValue != null ? currentText : placeholder }}</span>
                 <span class="select-box--chevron"></span>
             </span>
-            <ul class="select-box--dropdown">
+            <ul class="select-box--dropdown" v-if="options">
                 <li v-for="option in options" class="select-box--element" v-on:click="updateOption(option.value)"
                     :class="[option.value == currentValue ? 'select-box--active' : '' ]" :value="option.value"
                     :key="option.value">{{option.text}}</li>
