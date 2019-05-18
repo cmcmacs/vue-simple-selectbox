@@ -128,10 +128,13 @@
 
     .select-container {
         /* Prevent text from highlighting on click */
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -ms-user-select: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
         position: relative;
         display: inline;
     }
@@ -164,6 +167,7 @@
         list-style-type: none;
         position: absolute;
         padding: 0;
+        margin: 0;
         border: 1px solid #d8d8d8;
         border-radius: 3px;
         font-size: 16px;
@@ -191,7 +195,7 @@
 
     .select-box--active,
     .select-box--dropdown li:hover {
-        background: #EFF0FC;
+        background: rgba(115, 115, 115, 0.1);
     }
 
     .select-box--active::after {
@@ -202,7 +206,7 @@
         height: 5px;
         left: 0;
         position: relative;
-        top: 10px;
+        top: 7px;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg);
         vertical-align: top;
