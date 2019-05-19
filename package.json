@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-selectbox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple wrapper for select box to ease styling of the element",
 
   "main": "dist/vue-simple-selectbox.umd.js",
