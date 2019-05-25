@@ -117,6 +117,11 @@
       closeMenu() {
         this.selectStatus = false;
       }
+    },
+    watch: {
+      selected: function(newVal, oldVal) {
+        this.currentValue = newVal;
+      }
     }
   }
 </script>

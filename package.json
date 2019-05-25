@@ -1,6 +1,6 @@
 {
   "name": "vue-simple-selectbox",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple wrapper for select box to ease styling of the element",
 
   "main": "dist/vue-simple-selectbox.umd.js",
@@ -34,7 +34,7 @@
     "vue": "^2.6.8",
     "vue-template-compiler": "^2.6.8"
   },
-
+  "homepage": "https://github.com/MannyMannyManny/vue-simple-selectbox",
   "bugs": "https://github.com/MannyMannyManny/vue-simple-selectbox/issues",
   "license": "MIT",
   "keywords": [
